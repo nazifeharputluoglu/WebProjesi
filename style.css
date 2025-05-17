@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2ead8!important;
+  color: #333!important;
+  min-height:100vh;
+}
+h1, h2 {
+  color: #462808!important;
+}
+h5{
+    color:#da5757!important;
+}
+h6{
+    color:#7eb0be!important;
+}
+
+img {
+  margin-top: 10px;
+}
+.custom-img{
+    max-height:300px;
+    object-fit:cover;
+}
+.space-bottom{
+    margin-bottom:20px;
+}
+.card-title {
+  color:#7eb0be!important;
+  font-weight: bold;
+}
+
+.card-text {
+  color: #161616!important;
+}
+
+.card {
+  background-color: #f1dcdc!important;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
