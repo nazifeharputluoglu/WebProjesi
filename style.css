@@ -38,4 +38,16 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
-
+.carousel-inner img{
+  filter:brightness(1.1) contrast(1.1);
+  border-radius:10px;
+  max-height:300px;
+  object-fit: cover;
+}
+.carousel{
+  margin-top: 10px;
+}
+#konyaSlider{
+  max-width:800px;
+  margin:0 auto;
+}
