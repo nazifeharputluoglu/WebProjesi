@@ -51,3 +51,11 @@ img {
   max-width:800px;
   margin:0 auto;
 }
+.custom-navbar {
+  background-image: url("images\cini.jpg");
+  background-size: auto;
+  background-position: center;
+  background-repeat: repeat;
+  min-height: 100px;
+  
+}
