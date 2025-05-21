@@ -34,7 +34,7 @@ img {
 }
 
 .card {
-  background-color: #f1dcdc!important;
+  background-color: #763a3a!important;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
@@ -52,10 +52,130 @@ img {
   margin:0 auto;
 }
 .custom-navbar {
-  background-image: url("images\cini.jpg");
-  background-size: auto;
-  background-position: center;
-  background-repeat: repeat;
-  min-height: 100px;
+  background-color: rgb(144, 233, 233);
   
 }
+.scroll-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.scroll-gallery img {
+  height: 200px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.scroll-gallery img:hover {
+  transform: scale(1.05);
+}
+.video-hover-box {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hover-video-box {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.hover-video-box img,
+.hover-video-box .video-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 0.4s ease-in-out;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.hover-video-box .video-wrapper {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hover-video-box:hover .thumbnail {
+  opacity: 0;
+}
+
+.hover-video-box:hover .video-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hover-video-box iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+a {
+  color: #d40000;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+body {
+  background: radial-gradient(ellipse at top, #0b0c2a 0%, #000 100%);
+  color: white;
+}
+
+.starry-album-zone {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.album-orbit {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(255,255,255,0.3);
+  animation: rotate 10s linear infinite;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.album-orbit:hover {
+  animation-play-state: paused;
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+}
+
+.album-orbit img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+
