@@ -3,6 +3,7 @@ body {
   background-color: #f2ead8!important;
   color: #333!important;
   min-height:100vh;
+  padding:2rem ;
 }
 h1, h2 {
   color: #462808!important;
@@ -175,6 +176,54 @@ body {
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+.form-section {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+.btn-checker {
+  margin-right: 1rem;
+}
+.veri-kart {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+
+.login-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f4f8fb;
+  font-family: Arial, sans-serif;
+}
+
+
+.loader {
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-top: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 

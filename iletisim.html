@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim Formu</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <div class="form-section">
+    <h2 class="mb-4 text-center">İletişim Formu</h2>
+
+    <form id="iletisimForm">
+      <div class="row g-3">
+
+        <div class="col-md-6">
+          <label class="form-label">Ad</label>
+          <input type="text" class="form-control" v-model="ad" name="ad">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Soyad</label>
+          <input type="text" class="form-control" v-model="soyad" name="soyad">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">E-posta</label>
+          <input type="text" class="form-control" v-model="email" name="email">
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label">Telefon</label>
+          <input type="text" class="form-control" v-model="telefon" name="telefon">
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Konu</label>
+          <input type="text" class="form-control" v-model="konu" name="konu">
+        </div>
+
+        <div class="col-12">
+          <label class="form-label">Mesajınız</label>
+          <textarea class="form-control" v-model="mesaj" name="mesaj" rows="4"></textarea>
+        </div>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button type="button" class="btn btn-outline-primary btn-checker" onclick="jsKontrol()">JavaScript ile Kontrol</button>
+        <button type="button" class="btn btn-outline-success" @click="vueKontrol">Vue.js ile Kontrol</button>
+        <button type="submit" class="btn btn-primary" @click.prevent="formGonder">Gönder</button>
+        <button type="reset" class="btn btn-danger ms-2" @click="formTemizle">Temizle</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const { createApp } = Vue;
+
+  createApp({
+    data() {
+      return {
+        ad: '',
+        soyad: '',
+        email: '',
+        telefon: '',
+        konu: '',
+        mesaj: ''
+      }
+    },
+    methods: {
+      vueKontrol()
+       {
+        if (!this.ad || !this.soyad || !this.email || !this.telefon || !this.konu || !this.mesaj) {
+          alert("Lütfen tüm alanları doldurun.");
+          return;
+        }
+
+        if (!this.email.includes("@")) {
+          alert("Geçerli bir e-posta giriniz.");
+          return;
+        }
+
+        if (!/^\d{10}$/.test(this.telefon)) {
+          alert("Telefon sadece rakamlardan oluşmalı ve tam 10 haneli olmalıdır.");
+          return;
+        }
+
+        alert("Kontrol Başarılı!");
+      },
+
+      formGonder()
+       {
+        const formData = {
+          ad: this.ad,
+          soyad: this.soyad,
+          email: this.email,
+          telefon: this.telefon,
+          konu: this.konu,
+          mesaj: this.mesaj
+        };
+        localStorage.setItem("formData", JSON.stringify(formData));
+        window.location.href = "iletisim-veri.html";
+      },
+
+      formTemizle()
+       {
+        this.ad = '';
+        this.soyad = '';
+        this.email = '';
+        this.telefon = '';
+        this.konu = '';
+        this.mesaj = '';
+      }
+    }
+  }).mount('#app');
+
+  function jsKontrol() 
+  {
+    const form = document.getElementById("iletisimForm");
+    const ad = form.querySelector('[name="ad"]').value;
+    const email = form.querySelector('[name="email"]').value;
+    const tel = form.querySelector('[name="telefon"]').value;
+
+    if (!ad || !email || !tel) {
+      alert("Lütfen tüm alanları doldurun.");
+      return;
+    }
+
+    if (!email.includes("@")) {
+      alert("E-posta adresi geçersiz.");
+      return;
+    }
+
+    if (!/^\d{10}$/.test(tel)) {
+      alert("Telefon sadece rakamlardan oluşmalı ve tam 10 haneli olmalıdır.");
+      return;
+    }
+
+    alert("Kontrol Başarılı!");
+  }
+</script>
+
+</body>
+</html>
