@@ -1,88 +1,86 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f2ead8!important;
-  color: #333!important;
-  min-height:100vh;
-  padding:2rem ;
+  color: #333 !important;
+  min-height: 100vh;
+  padding: 2rem;
 }
+.index-body {
+  background: linear-gradient(to right, #fff1eb, #ace0f9);
+}
+.cv-body {
+  background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
+}
+
+.sehrim-body {
+   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+.mirasimiz-body{
+   background: linear-gradient(135deg, #7ee0f1 0%, #09c0ba 100%);
+}
+
+.ilgi-body {
+  background: linear-gradient(to bottom, #0a0a23, #000); /* ya da istediğin renk */
+}
+
+.iletisim-body {
+ 
+}
+
 h1, h2 {
-  color: #462808!important;
+  color: #3d627c !important;
 }
-h5{
-    color:#da5757!important;
+h3 {
+  color: #6f5586 !important;
 }
-h6{
-    color:#7eb0be!important;
+
+h5 {
+  color: #da5757 !important;
+}
+
+h6 {
+  color: #7eb0be !important;
 }
 
 img {
   margin-top: 10px;
 }
-.custom-img{
-    max-height:300px;
-    object-fit:cover;
-}
-.space-bottom{
-    margin-bottom:20px;
-}
+
 .card-title {
-  color:#7eb0be!important;
+  color: #7eb0be !important;
   font-weight: bold;
 }
 
 .card-text {
-  color: #161616!important;
+  color: #161616 !important;
 }
 
 .card {
-  background-color: #763a3a!important;
+  background-color: #365d84 !important;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
 }
-.carousel-inner img{
-  filter:brightness(1.1) contrast(1.1);
-  border-radius:10px;
-  max-height:300px;
+
+.carousel-inner img {
+  filter: brightness(1.1) contrast(1.1);
+  border-radius: 10px;
+  max-height: 300px;
   object-fit: cover;
 }
-.carousel{
+
+.carousel {
   margin-top: 10px;
 }
-#konyaSlider{
-  max-width:800px;
-  margin:0 auto;
+
+#konyaSlider {
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 .custom-navbar {
   background-color: rgb(144, 233, 233);
-  
-}
-.scroll-gallery {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 10px;
-  scroll-behavior: smooth;
 }
 
-.scroll-gallery img {
-  height: 200px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  transition: transform 0.3s;
-  cursor: pointer;
-}
-
-.scroll-gallery img:hover {
-  transform: scale(1.05);
-}
-.video-hover-box {
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
+/* Oyun video hover kutuları */
 .hover-video-box {
   position: relative;
   width: 300px;
@@ -90,32 +88,37 @@ img {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s;
 }
 
-.hover-video-box img,
-.hover-video-box .video-wrapper {
+.hover-video-box img {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
-  transition: opacity 0.4s ease-in-out;
   object-fit: cover;
+  z-index: 1;
+  transition: opacity 0.4s ease-in-out;
   border-radius: 12px;
 }
 
 .hover-video-box .video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   opacity: 0;
+  transition: opacity 0.4s ease-in-out;
   pointer-events: none;
 }
 
-.hover-video-box:hover .thumbnail {
+.hover-video-box:hover img {
   opacity: 0;
 }
 
 .hover-video-box:hover .video-wrapper {
   opacity: 1;
+  z-index: 2;
   pointer-events: auto;
 }
 
@@ -125,6 +128,9 @@ img {
   border: none;
   border-radius: 12px;
 }
+
+
+
 a {
   color: #d40000;
   font-weight: 500;
@@ -134,97 +140,46 @@ a {
 a:hover {
   text-decoration: underline;
 }
-body {
-  background: radial-gradient(ellipse at top, #0b0c2a 0%, #000 100%);
-  color: white;
-}
-
-.starry-album-zone {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 40px 20px;
-  flex-wrap: wrap;
-}
-
-.album-orbit {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(255,255,255,0.3);
-  animation: rotate 10s linear infinite;
-  transition: transform 0.3s ease;
-  cursor: pointer;
+#sanatci {
   position: relative;
+  background: radial-gradient(circle at center, #96c8f0, #000);
+  border-radius: 16px;
+  padding: 60px 20px;
+  color: white;
+  overflow: hidden;
+  z-index: 1;
 }
 
-.album-orbit:hover {
-  animation-play-state: paused;
-  transform: scale(1.08);
-  box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
-}
-
-.album-orbit img {
+.sanatci-album-bulutu {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+.arka-album {
+  position: absolute;
+  width: 120px;
+  animation: albumHareket 40s linear infinite;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.form-section {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 700px;
+@keyframes albumHareket {
+  0%   { transform: translateY(-200px); }
+  100% { transform: translateY(110%); }
+}
+
+.spotify-kutu {
+  max-width: 500px;
   margin: auto;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
-
-.btn-checker {
-  margin-right: 1rem;
-}
-.veri-kart {
-      max-width: 600px;
-      margin: 50px auto;
-      background: #fff;
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-
-
-.login-success {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #f4f8fb;
-  font-family: Arial, sans-serif;
-}
-
-
-.loader {
-  border: 6px solid #e0e0e0;
-  border-top: 6px solid #007bff;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin-top: 20px;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-
 
