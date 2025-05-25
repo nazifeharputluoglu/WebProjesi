@@ -4,16 +4,93 @@ body {
   min-height: 100vh;
   padding: 2rem;
 }
+ /* Genel sayfa arka planı */
 .index-body {
-  background: linear-gradient(to right, #fff1eb, #ace0f9);
+  background-image: url('images/cini-desen.jpg'); /* Çini desenli görselini bu klasöre koymalısın */
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
 }
+
+/* Karşılama kutusu */
+.welcome-zone {
+  background-color: rgba(255, 255, 255, 0.9); /* Yarı saydam beyaz kutu */
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Hobi ikonları */
+.hobi-ikonlar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hobi {
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #f7f1e3;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 100px;
+  transition: transform 0.3s;
+}
+
+.hobi:hover {
+  transform: scale(1.05);
+  background-color: #f2ead8;
+}
+
+.hobi span {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  color: #6e3c0a;
+}
+
+/* Buton */
+.btn-primary {
+  background-color: #6e3c0a;
+  border: none;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #8b5e3c;
+}
+
 .cv-body {
   background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
 }
 
 .sehrim-body {
-   background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+   background-image: url('images/cini.png');
+  background-repeat: repeat;        
+  background-size: cover;  
+  background-position: center;          
+  background-attachment: fixed;     
+  color: #333; 
 }
+.sehrim-body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); /* Şeffaf beyaz */
+  z-index: -1;
+}
+
 .mirasimiz-body{
    background: linear-gradient(135deg, #7ee0f1 0%, #09c0ba 100%);
 }
@@ -55,9 +132,9 @@ img {
 }
 
 .card {
-  background-color: #365d84 !important;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  background-color: rgba(48, 55, 105, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .carousel-inner img {
@@ -70,10 +147,74 @@ img {
 .carousel {
   margin-top: 10px;
 }
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.flip-card-front {
+  background-color: rgb(144, 233, 233);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.flip-card-front h4 {
+  margin: 10px;
+  font-weight: bold;
+}
+
+.flip-card-back {
+  background-color: #6e3c0a;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 #konyaSlider {
   max-width: 800px;
   margin: 0 auto;
+}
+.yazi-kalin {
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 .custom-navbar {
